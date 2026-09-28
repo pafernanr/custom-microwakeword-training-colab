@@ -1,6 +1,14 @@
 # Custom microWakeWord Training (Colab)
 
-Google Colab notebook for training custom [microWakeWord](https://github.com/kahrendt/microWakeWord) wake words. Produces TensorFlow Lite models that run on ESP32 microcontrollers via [ESPHome](https://esphome.io/).
+Turnkey Google Colab notebook for training custom [microWakeWord](https://github.com/kahrendt/microWakeWord) wake words. Produces TensorFlow Lite models that run on ESP32 microcontrollers via [ESPHome](https://esphome.io/).
+
+This is **not** a fork of microWakeWord — it's an end-to-end wrapper that installs it as a dependency and adds:
+
+- **Automated sample generation** via [Piper TTS](https://github.com/rhasspy/piper) — no need to record your own audio
+- **Automated dataset downloads** — augmentation data (MIT RIRs, AudioSet, FMA) and negative examples, all wired up
+- **Interactive pronunciation testing** — listen to TTS variants and select the best ones before training
+- **Single CONFIG dict** — abstracts away YAML configs, CLI flags, and directory plumbing
+- **Built-in bug workarounds** — stride assertion patch, datasets version pinning, OOM avoidance on free-tier Colab
 
 ## Pre-trained wake words
 
